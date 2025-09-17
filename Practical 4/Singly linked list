@@ -19,22 +19,26 @@ class LinkedList:
             current = current.next
         current.next = new_node
 
-ll = LinkedList()
-ll.append(1)
-ll.append(2)
-ll.append(3)
+        ll = LinkedList()
+        ll.append(1)
+        ll.append(2)
+        ll.append(3)
 
-class LinkedList:
+class Graph:
 
-    def display(self):
-        elements = []
-        current = self.head
-        while current:
-            elements.append(current.data)
-            current = current.next
-        print(" -> ".join(map(str, elements)))
+    def is_connected(self):
+        if not self.graph:
+            return True
+        start_vertex = next(iter(self.graph))
+        visited = set()
+        self._dfs_recursive(start_vertex, visited)
+        return len(visited) == len(self.graph)
 
-ll.display()  
+        print("\nIs the graph connected?", g.is_connected())
+
+        g.add_vertex(4)
+        print("After adding a disconnected vertex:")
+        print("Is the graph connected?", g.is_connected())
 
 class LinkedList:
 
@@ -52,8 +56,8 @@ class LinkedList:
         new_node.next = current.next
         current.next = new_node
 
-ll.insert(4, 1)
-ll.display()  
+        ll.insert(4, 1)
+        ll.display()  
 
 class LinkedList:
 
@@ -70,9 +74,8 @@ class LinkedList:
                 return
             current = current.next
 
-ll.delete(2)
-ll.display()  
-
+        ll.delete(2)
+        ll.display()
 class LinkedList:
 
     def search(self, data):
@@ -85,10 +88,11 @@ class LinkedList:
             position += 1
         return -1
 
-print(ll.search(4))  
-print(ll.search(5))
+        print(ll.search(4)) 
+        print(ll.search(5))  
 
 class LinkedList:
+
 
     def reverse(self):
         prev = None
@@ -100,5 +104,9 @@ class LinkedList:
             current = next_node
         self.head = prev
 
-ll.reverse()
-ll.display()  
+        ll.reverse()
+        ll.display()  
+
+
+  
+
