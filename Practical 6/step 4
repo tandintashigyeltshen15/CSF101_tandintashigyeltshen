@@ -1,0 +1,19 @@
+def binary_search_recursive(arr, target, left, right):
+    if left > right:
+        return -1  # Base case: not found
+
+    mid = (left + right) // 2
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return binary_search_recursive(arr, target, mid + 1, right)
+    else:
+        return binary_search_recursive(arr, target, left, mid - 1)
+
+
+# Test the recursive function
+test_list = [10, 2, 6, 4, 8, 1]
+test_list_sorted = sorted(test_list)
+result = binary_search_recursive(test_list_sorted, 6, 0, len(test_list_sorted) - 1)
+print(f"Recursive Binary Search: Index of 6 in sorted list is {result}")
+
